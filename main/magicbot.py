@@ -1,11 +1,13 @@
 from aiogram import Bot, Dispatcher, executor, types
 from random import *
-from os import getenv
-from dotenv import load_dotenv
+from environs import Env
 
-load_dotenv()
+env = Env()
+env.read_env()
 
-API_TOKEN: str = getenv('BOT_TOKEN')
+bot_token = env('BOT_TOKEN')
+
+API_TOKEN: str = bot_token
 
 bot: Bot = Bot(token=API_TOKEN)
 dp: Dispatcher = Dispatcher(bot)
