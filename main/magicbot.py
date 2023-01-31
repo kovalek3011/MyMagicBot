@@ -1,5 +1,5 @@
 from aiogram import Bot, Dispatcher, executor, types
-from random import *
+from random import choice
 from environs import Env
 
 env = Env()
